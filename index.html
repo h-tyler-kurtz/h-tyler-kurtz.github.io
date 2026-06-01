@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H. Tyler Kurtz · Analytics &amp; Operations Leader</title>
+<meta name="description" content="I build the data and operational systems growing companies run on. Analytics & operations leader, founding-hire builder, and youth coach. The door's open.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --color-bg:#FAFAEC;
+    --color-bg-sunk:#F1F0DA;
+    --color-surface:#FFFFFF;
+    --color-ink:#1F2110;
+    --color-ink-muted:#65684C;
+    --color-ink-faint:#999A7B;
+    --color-primary:#C0481B;
+    --color-primary-deep:#9E3C16;
+    --color-secondary:#4F6B4A;
+    --color-wasabi:#E9F056;
+    --color-plum:#351E28;
+    --color-line:#E6E6CE;
+    --color-line-strong:#D4D4B4;
+    --color-on-primary:#FCEFE2;
+
+    --display:'Bricolage Grotesque', 'Hanken Grotesk', sans-serif;
+    --body:'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono:'IBM Plex Mono', ui-monospace, monospace;
+
+    --maxw:1180px;
+    --measure:66ch;
+    --shadow-photo:0 18px 50px rgba(36,30,22,0.10);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body);
+    background:var(--color-bg);
+    color:var(--color-ink);
+    font-size:1.05rem;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  a{color:inherit;text-decoration:none}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ---------- Shared editorial bits ---------- */
+  .kicker{
+    font-family:var(--mono);font-size:0.76rem;font-weight:500;
+    letter-spacing:0.12em;text-transform:uppercase;color:var(--zone, var(--color-primary-deep));
+  }
+  .rule{height:1px;background:var(--color-line);border:0;width:100%}
+
+  .sec-head{margin-bottom:48px}
+  .sec-head .kicker{display:block;margin-bottom:16px}
+  .sec-title{
+    font-family:var(--display);font-weight:500;
+    font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.1;letter-spacing:-0.015em;
+    max-width:20ch;
+  }
+  .sec-intro{margin-top:18px;color:var(--color-ink-muted);max-width:var(--measure);font-size:1.08rem}
+  .sec-head-rule{margin-top:32px}
+
+  .section{padding:90px 0}
+  .section.sunk{background:var(--color-bg-sunk)}
+  .section.z-wasabi{background:#F5F6D8;--zone:#766611}
+  .section.z-sage{background:#ECEFE2;--zone:#3F5A3A}
+  .section.z-blue{background:#EAF1F6;--zone:#2C6580}
+  .section.z-peach{background:#FBEEE5;--zone:#9E3C16}
+  .section.z-mauve{background:#F1E9EC;--zone:#6E3A4E}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--body);font-weight:600;font-size:0.98rem;
+    padding:13px 22px;border-radius:6px;border:1px solid transparent;cursor:pointer;
+    transition:background .18s, border-color .18s, transform .18s, color .18s;
+  }
+  .btn .arr{transition:transform .18s}
+  .btn:hover .arr{transform:translateX(3px)}
+  .btn-primary{background:var(--color-primary);color:#fff}
+  .btn-primary:hover{background:var(--color-primary-deep)}
+  .btn-ghost{background:transparent;color:var(--color-ink);border-color:var(--color-line-strong)}
+  .btn-ghost:hover{border-color:var(--color-ink)}
+  .btn-invert{background:#fff;color:var(--color-primary-deep)}
+  .btn-invert:hover{background:var(--color-on-primary);transform:translateY(-1px)}
+
+  /* ---------- Nav ---------- */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(251,247,240,0.86);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--color-line)}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand-text{display:flex;flex-direction:column;line-height:1.04}
+  .brand-name{font-family:var(--display);font-weight:600;font-size:1.16rem;letter-spacing:-0.01em;color:var(--color-ink)}
+  .brand-title{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.13em;text-transform:uppercase;color:var(--color-ink-muted);margin-top:4px}
+  .brand .mk{width:9px;height:9px;border-radius:2px;background:var(--color-primary);transform:rotate(45deg)}
+  .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-links a{font-size:0.95rem;font-weight:500;color:var(--color-ink-muted);position:relative;padding:3px 0;transition:color .18s}
+  .nav-links a:hover{color:var(--color-ink)}
+  .nav-links a.active{color:var(--color-ink)}
+  .nav-links a.active::after{content:"";position:absolute;left:0;width:18px;height:2px;bottom:-3px;background:var(--color-primary)}
+  .nav-links a[href="#approach"].active::after{background:#766611}
+  .nav-links a[href="#experience"].active::after{background:#3F5A3A}
+  .nav-links a[href="#projects"].active::after{background:#2C6580}
+  .nav-links a[href="#skills"].active::after{background:#9E3C16}
+  .nav-links a[href="#recs"].active::after{background:#6E3A4E}
+  .nav-links a.nav-cta{background:var(--color-primary);color:#fff;font-weight:600;padding:9px 18px;border-radius:6px}
+  .nav-links a.nav-cta:hover{background:var(--color-primary-deep);color:#fff}
+  .nav-links a.nav-cta.active{color:#fff}
+  .nav-links a.nav-cta.active::after{display:none}
+  .nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:6px}
+  .nav-toggle span{display:block;width:24px;height:2px;background:var(--color-ink);margin:5px 0;border-radius:1px}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:72px 0 64px;border-bottom:1px solid var(--color-line)}
+  .hero-grid{display:grid;grid-template-columns:1.4fr 0.85fr;gap:54px;align-items:center}
+  .hero .kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px}
+  .hero .kicker .pulse{width:7px;height:7px;border-radius:50%;background:var(--color-secondary);position:relative}
+  .hero .kicker .pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--color-secondary);opacity:.5;animation:ping 2.4s ease-out infinite}
+  @keyframes ping{0%{transform:scale(.6);opacity:.7}100%{transform:scale(1.9);opacity:0}}
+  h1.hero-title{font-family:var(--display);font-weight:500;font-size:clamp(2.4rem,4.6vw,3.4rem);line-height:1.06;letter-spacing:-0.022em;max-width:16ch}
+  h1.hero-title em{font-style:normal;white-space:nowrap;color:var(--color-ink);background:var(--color-wasabi);padding:0.02em 0.14em;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  .hero-sub{margin-top:26px;color:var(--color-ink-muted);font-size:1.12rem;max-width:54ch}
+  .hero-actions{margin-top:32px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .text-link{display:inline-flex;align-items:center;gap:7px;font-weight:600;color:var(--color-primary-deep);border-bottom:1px solid transparent;padding-bottom:2px}
+  .text-link .arr{transition:transform .18s}
+  .text-link:hover{border-color:var(--color-primary-deep)}
+  .text-link:hover .arr{transform:translateX(3px)}
+  .open-note{margin-top:34px;padding-top:22px;border-top:1px solid var(--color-line);max-width:52ch;color:var(--color-ink-muted);font-size:0.98rem}
+  .open-note b{color:var(--color-ink);font-weight:600}
+  .open-note .lead{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-secondary);display:block;margin-bottom:8px}
+
+  .hero-photo{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/5;background:var(--color-surface);border:1px solid var(--color-line)}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero-photo.empty img{display:none}
+  .hero-photo:not(.empty){box-shadow:var(--shadow-photo)}
+  .hero-photo .photo-hint{display:none}
+  .hero-photo.empty{display:grid;place-items:center;background:#F1F2D6}
+  .hero-photo.empty::before{content:"";position:absolute;inset:13px;border:1px dashed var(--color-line-strong);border-radius:5px;pointer-events:none}
+  .hero-photo.empty .photo-hint{display:block;text-align:center;color:var(--color-ink-faint);font-family:var(--mono);font-size:0.78rem;line-height:1.9;padding:24px;letter-spacing:0.04em}
+  .hero-photo.empty .photo-hint b{color:var(--color-ink-muted);font-weight:500}
+
+  /* ---------- Approach (numbered editorial list) ---------- */
+  .numbered{border-top:1px solid var(--color-line)}
+  .numbered .row{display:grid;grid-template-columns:auto 1fr;gap:28px;padding:30px 0;border-bottom:1px solid var(--color-line);align-items:baseline}
+  .numbered .row .no{font-family:var(--mono);font-size:0.92rem;color:var(--zone, var(--color-primary));padding-top:6px}
+  .numbered .row h3{font-family:var(--display);font-weight:500;font-size:1.42rem;letter-spacing:-0.01em;margin-bottom:10px}
+  .numbered .row p{color:var(--color-ink-muted);max-width:60ch}
+
+  /* ---------- Applied AI band ---------- */
+  .ai{margin-top:44px;border:1px solid var(--color-line);border-radius:8px;background:var(--color-surface);padding:34px 36px;display:grid;grid-template-columns:0.9fr 1.3fr;gap:34px}
+  .ai .ai-head .kicker{display:block;margin-bottom:14px}
+  .ai .ai-head h3{font-family:var(--display);font-weight:500;font-size:1.5rem;line-height:1.18;letter-spacing:-0.01em}
+  .ai-points{list-style:none;display:grid;gap:14px}
+  .ai-points li{display:grid;grid-template-columns:auto 1fr;gap:14px;color:var(--color-ink-muted)}
+  .ai-points li .m{font-family:var(--mono);font-size:0.82rem;color:var(--zone, var(--color-primary));padding-top:2px}
+  .ai-points li b{color:var(--color-ink);font-weight:600}
+
+  /* ---------- Experience / Projects disclosure list ---------- */
+  .entries{border-top:1px solid var(--color-line)}
+  .entry{border-bottom:1px solid var(--color-line)}
+  .entry-trigger{width:100%;background:none;border:0;cursor:pointer;font-family:var(--body);text-align:left;
+    display:grid;grid-template-columns:150px 1fr auto;gap:24px;align-items:baseline;padding:26px 0}
+  .entry-trigger:hover .entry-role{color:var(--color-primary-deep)}
+  .entry-date{font-family:var(--mono);font-size:0.8rem;letter-spacing:0.04em;color:var(--color-ink-faint);text-transform:uppercase}
+  .entry-role{display:block;font-family:var(--display);font-weight:500;font-size:1.28rem;letter-spacing:-0.01em;transition:color .18s;line-height:1.3}
+  .entry-co{display:block;color:var(--color-ink-muted);font-size:0.98rem;margin-top:7px}
+  .entry-toggle{font-family:var(--mono);font-size:1.2rem;color:var(--color-ink-faint);line-height:1;align-self:center}
+  .entry.open .entry-toggle{color:var(--color-primary)}
+  .entry-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .entry-body-inner{padding:0 0 28px 174px}
+  .entry-body ul{list-style:none;display:grid;gap:11px;max-width:64ch}
+  .entry-body li{position:relative;padding-left:20px;color:var(--color-ink-muted)}
+  .entry-body li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:1px;background:var(--color-primary)}
+  .entry-body li b{color:var(--color-ink);font-weight:600}
+  .entry-tags{margin-top:16px;font-family:var(--mono);font-size:0.78rem;letter-spacing:0.04em;color:var(--color-ink-faint);text-transform:uppercase}
+
+  /* projects share .entry but show a figure number */
+  .entry-fig{font-family:var(--display);font-weight:500;font-size:1.7rem;color:var(--zone, var(--color-primary));line-height:1;white-space:nowrap}
+  .proj-trigger{grid-template-columns:150px 1fr auto}
+  .proj-dek{display:block;color:var(--color-ink-muted);font-size:0.98rem;margin-top:7px;max-width:52ch}
+
+  /* ---------- Skills (grouped lists) ---------- */
+  .skill-groups{display:grid;grid-template-columns:1fr 1fr;gap:36px 56px;border-top:1px solid var(--color-line);padding-top:36px}
+  .skill-group .glabel{font-family:var(--mono);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--zone, var(--color-primary-deep));margin-bottom:14px}
+  .skill-group p{font-size:1.05rem;line-height:1.8;color:var(--color-ink)}
+  .skill-group .lead-skill{color:var(--color-ink);font-weight:600}
+  .skill-group .sep{color:var(--color-line-strong);padding:0 2px}
+
+  /* ---------- Recommendations (pull quotes) ---------- */
+  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:34px 48px}
+  .quote{border-left:2px solid var(--zone, var(--color-primary));padding-left:24px}
+  .quote blockquote{font-family:var(--display);font-weight:400;font-style:normal;font-size:1.2rem;line-height:1.46;color:var(--color-ink);letter-spacing:-0.005em}
+  .quote .attr{margin-top:18px}
+  .quote .attr .name{font-weight:600;color:var(--color-ink)}
+  .quote .attr .rel{font-family:var(--mono);font-size:0.74rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-ink-faint);margin-top:4px}
+
+  /* ---------- Personal ---------- */
+  .personal-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start}
+  .philo{font-family:var(--display);font-style:normal;font-weight:500;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.18;color:var(--color-primary);letter-spacing:-0.015em}
+  .philo + p{margin-top:20px;color:var(--color-ink-muted);max-width:50ch}
+  .facts{display:grid;gap:22px;border-top:1px solid var(--color-line);padding-top:8px}
+  .fact{display:grid;grid-template-columns:100px 1fr;gap:18px;padding-top:18px;border-top:1px solid var(--color-line)}
+  .fact:first-child{border-top:0}
+  .fact .fl{font-family:var(--mono);font-size:0.74rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--zone, var(--color-primary-deep));padding-top:3px}
+  .fact .ft b{display:block;font-family:var(--display);font-weight:500;font-size:1.14rem;margin-bottom:4px}
+  .fact .ft span{color:var(--color-ink-muted);font-size:0.97rem}
+
+  /* ---------- Office hours full-bleed band ---------- */
+  .oh{background:var(--color-primary);color:var(--color-on-primary)}
+  .oh .wrap{padding-top:84px;padding-bottom:84px}
+  .oh .kicker{color:var(--color-on-primary);opacity:0.8;display:block;margin-bottom:18px}
+  .oh h2{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.08;letter-spacing:-0.015em;color:#fff;max-width:18ch}
+  .oh p{margin-top:18px;font-size:1.1rem;max-width:56ch;color:#fff}
+  .oh .who{margin-top:24px;font-family:var(--mono);font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-on-primary);opacity:0.85}
+  .oh .oh-actions{margin-top:34px}
+  .oh-grid{display:grid;grid-template-columns:1.25fr 0.8fr;gap:48px;align-items:center}
+  .oh-copy{grid-column:1;grid-row:1}
+  .oh-art{grid-column:2;grid-row:1;display:flex;justify-content:center}
+  .oh-art svg{width:100%;max-width:300px;height:auto;display:block}
+
+  /* ---------- Connect / footer ---------- */
+  .connect{padding:88px 0}
+  .connect h2{font-family:var(--display);font-weight:500;font-size:clamp(1.8rem,3.6vw,2.5rem);letter-spacing:-0.015em}
+  .connect p{margin-top:16px;color:var(--color-ink-muted);max-width:54ch;font-size:1.08rem}
+  .connect-links{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px}
+  footer.foot{background:var(--color-plum);padding:36px 0}
+  .foot-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:0.76rem;letter-spacing:0.04em;text-transform:uppercase;color:rgba(252,239,226,0.6)}
+  .foot-inner .fb{color:var(--color-on-primary);font-family:var(--display);font-size:1rem;text-transform:none;letter-spacing:0}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- Responsive ---------- */
+  /* Tablet & below: single column. Photo leads the hero (above the copy),
+     centered and modest, a deliberate mobile treatment, not the desktop
+     side-by-side shrunk down. */
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr;gap:34px}
+    .hero-photo{order:-1;justify-self:center;width:100%;max-width:260px;aspect-ratio:1/1;border-radius:50%}
+    .hero-photo.empty::before{inset:11px;border-radius:50%}
+    .hero-photo.empty .photo-hint{padding:30px;font-size:0.72rem;line-height:1.8}
+    .ai{grid-template-columns:1fr;gap:24px;padding:30px 28px}
+    .skill-groups{grid-template-columns:1fr;gap:30px}
+    .quotes{grid-template-columns:1fr;gap:30px}
+    .personal-grid{grid-template-columns:1fr;gap:34px}
+    .oh-grid{display:block}
+    .oh-grid::after{content:"";display:block;clear:both}
+    .oh-art{float:right;display:block;width:92px;margin:2px 0 6px 18px}
+    .oh-art svg{max-width:92px}
+  }
+
+  /* Collapse nav to a menu before the links crowd the bar */
+  @media (max-width:900px){
+    .nav-toggle{display:block}
+    .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:2px;background:var(--color-bg);border-bottom:1px solid var(--color-line);padding:12px 24px 18px;transform:translateY(-10px);opacity:0;pointer-events:none;transition:.2s}
+    .nav-links.show{transform:none;opacity:1;pointer-events:auto}
+    .nav-links a{padding:12px 0;width:100%;border-bottom:1px solid var(--color-line)}
+    .nav-links a.active::after{display:none}
+    .nav-links a.nav-cta{margin-top:12px;border-bottom:0;text-align:center}
+  }
+
+  /* Phone */
+  @media (max-width:640px){
+    .section{padding:56px 0}
+    .hero{padding:34px 0 40px}
+    h1.hero-title{font-size:2.15rem;line-height:1.08}
+    .hero-sub{font-size:1.04rem;margin-top:22px}
+    .hero-photo{max-width:220px}
+    .sec-head{margin-bottom:32px}
+    .sec-head-rule{margin-top:26px}
+    .numbered .row{gap:18px;padding:24px 0}
+    .ai{padding:24px 20px}
+    .oh .wrap{padding-top:56px;padding-bottom:56px}
+    .connect{padding:58px 0}
+    .entry-trigger{grid-template-columns:1fr auto;gap:6px 14px;padding:22px 0}
+    .entry-date{grid-column:1 / -1;margin-bottom:2px}
+    .entry-body-inner{padding-left:0}
+    .proj-trigger{grid-template-columns:1fr auto}
+    .entry-fig{grid-column:1 / -1;margin-bottom:2px}
+    .connect-links{flex-direction:column;align-items:flex-start}
+    .foot-inner{flex-direction:column;align-items:flex-start;gap:10px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script data-goatcounter="https://htylerkurtz.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a id="top"></a>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><span class="mk"></span><span class="brand-text"><span class="brand-name">Tyler&nbsp;Kurtz</span><span class="brand-title">Analytics &amp; Operations Leader</span></span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#approach">How I Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#recs">Recommendations</a>
+      <a href="#office-hours" class="nav-cta">Office Hours</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1 class="hero-title reveal">Structured systems. Rigorous analysis. Relentlessly optimistic.</h1>
+        <p class="hero-sub reveal">For 10+ years I&rsquo;ve built the analytics and operational systems that growing companies need, often as the founding analytics or ops hire. I turn ambiguous problems into clear, measurable, and scalable processes.</p>
+        <p class="hero-sub reveal" style="margin-top:16px;">I&rsquo;m a free agent, and I&rsquo;m ready to build. I&rsquo;m looking for my next role in Operations or Analytics. Also happy to talk about opportunities, work through real problems with you, or chat about whatever is on your mind. Book time below.</p>
+        <div class="hero-actions reveal">
+          <a href="#office-hours" class="btn btn-primary">Book office hours <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="hero-photo empty reveal" id="heroPhoto">
+        <img src="tyler-photo.jpg" alt="H. Tyler Kurtz"
+             onload="document.getElementById('heroPhoto').classList.remove('empty')"
+             onerror="this.remove()">
+        <div class="photo-hint">Tyler&rsquo;s photo goes here<br>save it in this folder as<br><b>tyler-photo.jpg</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== APPROACH ===== -->
+<section class="section z-wasabi" id="approach">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">How I Work</span>
+      <h2 class="sec-title">Operator&rsquo;s Instincts. Analyst&rsquo;s Discipline. Optimist&rsquo;s Attitude.</h2>
+      <p class="sec-intro">I love to learn, test ideas, and build. I use data, models, and AI to understand problems and define success. I establish a clear process to achieve goals, measure progress, and iterate to improve.</p>
+    </div>
+
+    <div class="numbered reveal">
+      <div class="row">
+        <div class="no">01</div>
+        <div>
+          <h3>Structured Systems</h3>
+          <p>Whether it&rsquo;s building teams, playbooks, dashboards, or models, I define the problem, establish clear success metrics, evaluate outcomes, and iterate to drive improvement.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="no">02</div>
+        <div>
+          <h3>Rigorous Analysis</h3>
+          <p>I use a data-driven approach to understand issues and solve problems. I model scenarios to evaluate possible outcomes and key drivers, use data to test hypotheses, and forecast what comes next.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="no">03</div>
+        <div>
+          <h3>Relentlessly Optimistic</h3>
+          <p>I look for what&rsquo;s working and double down, or pivot when it&rsquo;s not. I rally teams and colleagues around our success and plans to win. The sweet spot: people doing work they love that the business actually needs. Find that, and success follows.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai reveal">
+      <div class="ai-head">
+        <span class="kicker">Applied AI &middot; daily</span>
+        <h3>I don&rsquo;t just talk about AI. I ship with it.</h3>
+      </div>
+      <ul class="ai-points">
+        <li><span><b>Research &amp; intelligence:</b> Deployed a scheduled AI agent delivering weekly competitor briefs; leveraged AI to evaluate prospect fit, research state expansion criteria and applicable laws, and flag contract compliance issues.</span></li>
+        <li><span><b>Operations automation:</b> Engineered a Python script to generate 700+ personalized homeowner documents from a single Word template; cleaned data; auto-emailed payments and pipeline reports to clients.</span></li>
+        <li><span><b>Prototyping &amp; building:</b> Used Lovable to prototype a lightweight API-based quoting tool; authored Claude Cowork skills with embedded brand guidelines to generate on-brand slide decks.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section class="section z-sage" id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Experience</span>
+      <h2 class="sec-title">Fifteen years of turning messy into measurable.</h2>
+      <p class="sec-intro">From economic briefings in D.C. to founding analytics in startups. Click any role to go deeper.</p>
+    </div>
+
+    <div class="entries reveal">
+      <div class="entry">
+        <button class="entry-trigger">
+          <span class="entry-date">2023 &ndash; 2026</span>
+          <span><span class="entry-role">Director, Operations &amp; Analytics</span><span class="entry-co">HDM Capital &middot; Employee #9</span></span>
+          <span class="entry-toggle">+</span>
+        </button>
+        <div class="entry-body"><div class="entry-body-inner">
+          <ul>
+            <li><b>Go-to-market enablement:</b> built onboarding, collateral, and a progress tracker that enabled 3&times; more new clients over two years; launched in 4 new states for 2.5&times; volume in a year.</li>
+            <li><b>Analytics foundation:</b> defined company-wide KPIs and built 13 executive SQL dashboards; developed sales forecasts for capital planning; automated payment reporting via Make.com.</li>
+            <li><b>Departments from zero:</b> built Customer Success and Training (5 hires); ticketing + LMS cut missed calls 35%, dropped partner rejections 14%, improved onboarding velocity 25%.</li>
+            <li><b>Strategic initiatives:</b> implemented Plaid to take settlement from a week to same-day; designed an IRS tax-credit sale procedure for a major LP; launched the first API client integration, unlocking $1M.</li>
+          </ul>
+          <div class="entry-tags">SQL &middot; Python &middot; Make.com &middot; Plaid &middot; AI agents &middot; Forecasting</div>
+        </div></div>
+      </div>
+
+      <div class="entry">
+        <button class="entry-trigger">
+          <span class="entry-date">2019 &ndash; 2023</span>
+          <span><span class="entry-role">Customer Analytics Manager &larr; Senior Data Analyst</span><span class="entry-co">Bolt &middot; First analytics hire &middot; 4 years</span></span>
+          <span class="entry-toggle">+</span>
+        </button>
+        <div class="entry-body"><div class="entry-body-inner">
+          <ul>
+            <li><b>Team leadership:</b> Built and led a high-performing analytics team of 2 analysts, both promoted under my leadership; set clear expectations, prioritized projects, and delivered timely feedback. Trained 3 colleagues in SQL and analytics, expanding cross-functional capability.</li>
+            <li><b>Data strategy &amp; infrastructure:</b> Defined company metrics strategy; centralized data using dbt, Git, GCP, and Looker to provide consistent reporting across all teams. Team built 25+ dashboards enabling self-service insights for CSM, Sales, and Marketing.</li>
+            <li><b>A/B testing &amp; experimentation:</b> Partnered with Product and Engineering to design, execute, and analyze experiments; pre-calculated sample sizes, coordinated with PMs and client developers, and translated results into product recommendations for internal and client roadmaps.</li>
+            <li><b>Client analytics:</b> Built ROI models and executive-level presentations for clients; developed a deal desk pricing calculator to evaluate new customer revenue and risk potential.</li>
+          </ul>
+          <div class="entry-tags">Looker &middot; dbt &middot; GCP &middot; Experimentation &middot; A/B Testing &middot; People Management</div>
+        </div></div>
+      </div>
+
+      <div class="entry">
+        <button class="entry-trigger">
+          <span class="entry-date">2016 &ndash; 2019</span>
+          <span><span class="entry-role">Senior Data Analyst &larr; Data Analyst</span><span class="entry-co">Rocket Lawyer &middot; 2.5 years</span></span>
+          <span class="entry-toggle">+</span>
+        </button>
+        <div class="entry-body"><div class="entry-body-inner">
+          <ul>
+            <li><b>Dashboards &amp; reporting:</b> Built 19 Tableau dashboards used daily by executives in Finance, Product, Marketing, and Sales to make business decisions.</li>
+            <li><b>Growth analysis:</b> Identified low-ROI SEM spend and recommended reallocation, increasing SEM ROI by 10%; modeled experiment impacts to size opportunities and inform the product roadmap.</li>
+            <li><b>Impact:</b> Saved the company hundreds of thousands by identifying an email error driving higher cancellation rates; presented findings directly to the C-suite.</li>
+            <li><b>Mentorship:</b> Trained counterpart on Tableau; taught 3 coworkers SQL and query optimization.</li>
+          </ul>
+          <div class="entry-tags">Tableau &middot; A/B Testing &middot; SEM &middot; SQL</div>
+        </div></div>
+      </div>
+
+      <div class="entry">
+        <button class="entry-trigger">
+          <span class="entry-date">2014 &ndash; 2016</span>
+          <span><span class="entry-role">Sales &amp; Business Development Analyst</span><span class="entry-co">Spruce Finance &middot; First analytics hire &middot; Solar financing</span></span>
+          <span class="entry-toggle">+</span>
+        </button>
+        <div class="entry-body"><div class="entry-body-inner">
+          <ul>
+            <li><b>Built the reporting foundation:</b> Conceptualized and built the entire Sales/BD reporting suite in Tableau and Salesforce, reducing time spent on data management by 65%.</li>
+            <li><b>Client-facing analytics:</b> Modeled and benchmarked client KPIs into board and executive presentations; joined quarterly business reviews as the data expert.</li>
+            <li><b>Planning &amp; strategy:</b> Forecast sales and revenue for annual and quarterly planning; led cross-functional analytics meetings and conducted market research to identify target geographies and accounts.</li>
+          </ul>
+          <div class="entry-tags">Tableau &middot; Salesforce &middot; Forecasting &middot; Cleantech</div>
+        </div></div>
+      </div>
+
+      <div class="entry">
+        <button class="entry-trigger">
+          <span class="entry-date">2013</span>
+          <span><span class="entry-role">Strategic Research Consultant</span><span class="entry-co">Corporate Executive Board (CEB)</span></span>
+          <span class="entry-toggle">+</span>
+        </button>
+        <div class="entry-body"><div class="entry-body-inner">
+          <ul>
+            <li>Analyzed complex marketing challenges — market sizing, benchmarking, campaign effectiveness — for heads of marketing at Fortune 500 companies.</li>
+            <li>Interviewed senior marketing leaders to surface industry best practices; modeled consumer and corporate behavior to generate actionable recommendations.</li>
+            <li>Developed surveys to test research hypotheses; distilled findings into polished presentations for C-suite audiences.</li>
+          </ul>
+          <div class="entry-tags">Market Research &middot; Quantitative Analysis &middot; Fortune 500</div>
+        </div></div>
+      </div>
+
+      <div class="entry">
+        <button class="entry-trigger">
+          <span class="entry-date">2009 &ndash; 2013</span>
+          <span><span class="entry-role">Senior Economic Analyst</span><span class="entry-co">Central Intelligence Agency (CIA)</span></span>
+          <span class="entry-toggle">+</span>
+        </button>
+        <div class="entry-body"><div class="entry-body-inner">
+          <ul>
+            <li>Researched and analyzed Eastern European economic, energy, and political issues; served as the regional economic expert for political, leadership, and military analysts.</li>
+            <li>Wrote analytic reports for the President and senior policymakers on energy resources, trade disputes, natural gas shortages, and banking crises.</li>
+            <li>Briefed high-level government officials to influence U.S. foreign policy; collaborated daily with analysts across disciplines.</li>
+            <li>Received three Exceptional Performance Awards for outstanding analysis and mission support. Mentored the newest economic analyst on the team.</li>
+          </ul>
+          <div class="entry-tags">Economic Intelligence &middot; Energy Policy &middot; Geopolitics &middot; Briefing</div>
+        </div></div>
+      </div>
+
+      <div class="entry">
+        <button class="entry-trigger">
+          <span class="entry-date">2007 &ndash; 2008</span>
+          <span><span class="entry-role">Economic Research Assistant</span><span class="entry-co">Joint Economic Committee &middot; U.S. Congress</span></span>
+          <span class="entry-toggle">+</span>
+        </button>
+        <div class="entry-body"><div class="entry-body-inner">
+          <ul>
+            <li>Researched and analyzed U.S. economic conditions including monetary policy, the federal budget, bond markets, and the housing market.</li>
+            <li>Prepared weekly economic briefs for Senators and Congressmen on the JEC; drafted questions for members to ask during economic policy hearings.</li>
+            <li>Liaised with Congressional staffers across committees to gauge and respond to political dynamics.</li>
+          </ul>
+          <div class="entry-tags">Economics &middot; Policy Analysis &middot; Research</div>
+        </div></div>
+      </div>
+
+      <div class="entry">
+        <button class="entry-trigger">
+          <span class="entry-date">2003 &ndash; 2010</span>
+          <span><span class="entry-role">Education</span><span class="entry-co">Johns Hopkins SAIS &middot; University of Nevada, Las Vegas</span></span>
+          <span class="entry-toggle">+</span>
+        </button>
+        <div class="entry-body"><div class="entry-body-inner">
+          <ul>
+            <li><b>MA in International Relations (International Economics &amp; Energy)</b>, Johns Hopkins SAIS. Specializations in quantitative methods, economic theory, and emerging markets.</li>
+            <li><b>BA, Economics</b>, UNLV, cum laude; Millennium and Dismal Science scholarships for academic excellence.</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section class="section z-blue" id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Building</span>
+      <h2 class="sec-title">A few problems I got to take from zero to running.</h2>
+    </div>
+
+    <div class="entries reveal">
+      <div class="entry">
+        <button class="entry-trigger proj-trigger">
+          <span class="entry-fig">2.5&times;</span>
+          <span><span class="entry-role">Multi-state expansion engine</span><span class="proj-dek">Launched in four new states in a year, then systematized it into a repeatable framework.</span></span>
+          <span class="entry-toggle">+</span>
+        </button>
+        <div class="entry-body"><div class="entry-body-inner">
+          <ul><li>Launched the product in four new states in a single year, driving a 2.5&times; increase in volume, then turned the whole process into a repeatable framework so the next expansion wouldn&rsquo;t start from scratch.</li></ul>
+          <div class="entry-tags">HDM Capital</div>
+        </div></div>
+      </div>
+
+      <div class="entry">
+        <button class="entry-trigger proj-trigger">
+          <span class="entry-fig">$1M</span>
+          <span><span class="entry-role">First API client integration</span><span class="proj-dek">Built HDM&rsquo;s first API-based client channel and unlocked a million in revenue.</span></span>
+          <span class="entry-toggle">+</span>
+        </button>
+        <div class="entry-body"><div class="entry-body-inner">
+          <ul><li>Designed and launched HDM&rsquo;s first API-based client integration, unlocking $1M in revenue that year and opening a channel that didn&rsquo;t exist before.</li></ul>
+          <div class="entry-tags">HDM Capital</div>
+        </div></div>
+      </div>
+
+      <div class="entry">
+        <button class="entry-trigger proj-trigger">
+          <span class="entry-fig">700+</span>
+          <span><span class="entry-role">Document automation at scale</span><span class="proj-dek">Python automation that turns one template into hundreds of personalized documents.</span></span>
+          <span class="entry-toggle">+</span>
+        </button>
+        <div class="entry-body"><div class="entry-body-inner">
+          <ul><li>Engineered Python automation to generate 700+ personalized homeowner documents from a single template, turning a manual slog into a one-click job.</li></ul>
+          <div class="entry-tags">Applied AI &middot; Python</div>
+        </div></div>
+      </div>
+
+      <div class="entry">
+        <button class="entry-trigger proj-trigger">
+          <span class="entry-fig">1 wk&rarr;0</span>
+          <span><span class="entry-role">Same-day payments</span><span class="proj-dek">Diagnosed payment friction and implemented Plaid; settlement went from a week to same-day.</span></span>
+          <span class="entry-toggle">+</span>
+        </button>
+        <div class="entry-body"><div class="entry-body-inner">
+          <ul><li>Diagnosed the payment friction holding up partners, implemented Plaid, and took settlement times from a week down to same-day.</li></ul>
+          <div class="entry-tags">HDM Capital &middot; Plaid</div>
+        </div></div>
+      </div>
+
+      <div class="entry">
+        <button class="entry-trigger proj-trigger">
+          <span class="entry-fig">2 depts</span>
+          <span><span class="entry-role">Customer Success &amp; Training, from zero</span><span class="proj-dek">Built two departments and five hires; ticketing + LMS cut missed calls 35%.</span></span>
+          <span class="entry-toggle">+</span>
+        </button>
+        <div class="entry-body"><div class="entry-body-inner">
+          <ul><li>Built two departments from the ground up and hired five people. Automated ticketing and an LMS cut missed calls 35%, dropped partner rejection rates 14%, and improved onboarding velocity 25%.</li></ul>
+          <div class="entry-tags">HDM Capital</div>
+        </div></div>
+      </div>
+
+      <div class="entry">
+        <button class="entry-trigger proj-trigger">
+          <span class="entry-fig">13</span>
+          <span><span class="entry-role">The analytics foundation</span><span class="proj-dek">Defined company-wide KPIs and built the dashboards leadership used to steer the business.</span></span>
+          <span class="entry-toggle">+</span>
+        </button>
+        <div class="entry-body"><div class="entry-body-inner">
+          <ul><li>Defined and centralized company-wide KPIs and built 13 executive dashboards in SQL, the single source of truth leadership used to steer the business.</li></ul>
+          <div class="entry-tags">HDM Capital &middot; SQL</div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section class="section z-peach" id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Skills</span>
+      <h2 class="sec-title">What&rsquo;s in the kit.</h2>
+    </div>
+    <div class="skill-groups reveal">
+      <div class="skill-group">
+        <div class="glabel">AI &amp; Automation</div>
+        <p><span class="lead-skill">AI workflow automation</span><span class="sep">&middot;</span><span class="lead-skill">Prompt engineering</span><span class="sep">&middot;</span><span class="lead-skill">Claude skills</span><span class="sep">&middot;</span>Scheduled AI agents<span class="sep">&middot;</span>Google Gemini<span class="sep">&middot;</span>OpenAI Operator<span class="sep">&middot;</span>Make.com<span class="sep">&middot;</span>Lovable<span class="sep">&middot;</span>No-code automation</p>
+      </div>
+      <div class="skill-group">
+        <div class="glabel">Data &amp; Analytics</div>
+        <p><span class="lead-skill">A/B testing &amp; experimentation</span><span class="sep">&middot;</span><span class="lead-skill">Dashboard building</span><span class="sep">&middot;</span>Data analytics<span class="sep">&middot;</span>Forecasting<span class="sep">&middot;</span>KPI definition<span class="sep">&middot;</span>Quantitative analysis<span class="sep">&middot;</span>Statistics<span class="sep">&middot;</span>Data modeling</p>
+      </div>
+      <div class="skill-group">
+        <div class="glabel">Tools &amp; Tech</div>
+        <p><span class="lead-skill">SQL</span><span class="sep">&middot;</span><span class="lead-skill">Python</span><span class="sep">&middot;</span>Looker<span class="sep">&middot;</span>Tableau<span class="sep">&middot;</span>Power BI<span class="sep">&middot;</span>Mode<span class="sep">&middot;</span>Snowflake<span class="sep">&middot;</span>BigQuery<span class="sep">&middot;</span>Amazon Redshift<span class="sep">&middot;</span>AWS<span class="sep">&middot;</span>Google Cloud Platform<span class="sep">&middot;</span>dbt<span class="sep">&middot;</span>Git<span class="sep">&middot;</span>Salesforce<span class="sep">&middot;</span>Plaid<span class="sep">&middot;</span>Excel<span class="sep">&middot;</span>Google Sheets</p>
+      </div>
+      <div class="skill-group">
+        <div class="glabel">Leadership</div>
+        <p><span class="lead-skill">Building teams from scratch</span><span class="sep">&middot;</span>Process design<span class="sep">&middot;</span>Mentoring &amp; coaching<span class="sep">&middot;</span>Strategy<span class="sep">&middot;</span>Program management<span class="sep">&middot;</span>Cross-functional leadership<span class="sep">&middot;</span>Public speaking<span class="sep">&middot;</span>Stakeholder communication</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RECOMMENDATIONS ===== -->
+<section class="section z-mauve" id="recs">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">In Their Words</span>
+      <h2 class="sec-title">What it&rsquo;s like to work with me.</h2>
+    </div>
+    <div class="quotes reveal">
+      <div class="quote">
+        <blockquote>There were multiple projects Tyler led from conception to execution, and I could always count on him to get the job done at a high level. Regardless of the challenges, he&rsquo;d find a way to figure things out, and his positive spirit made work fun.</blockquote>
+        <div class="attr"><div class="name">Randy Hum</div><div class="rel">Managed me at Bolt</div></div>
+      </div>
+      <div class="quote">
+        <blockquote>Tyler is a hands-on manager who also encourages autonomy. He improved my technical skills while advising me on my career. I grew so much, and so much of that wouldn&rsquo;t have been possible without his mentorship.</blockquote>
+        <div class="attr"><div class="name">Sarah Zimmerman</div><div class="rel">Reported to me at Bolt</div></div>
+      </div>
+      <div class="quote">
+        <blockquote>Tyler brought data to life, but more importantly, he helped us understand why it mattered and what to do about it. Expert analysis, on time, accurate, and client-ready.</blockquote>
+        <div class="attr"><div class="name">Liz Fagan</div><div class="rel">Senior colleague at Spruce Finance</div></div>
+      </div>
+      <div class="quote">
+        <blockquote>A talent for mining data for strategic insights and the ability to communicate them productively. His constantly positive attitude is contagious. He builds relationships easily and is an excellent communicator.</blockquote>
+        <div class="attr"><div class="name">Tom Harvey</div><div class="rel">Managed me at Spruce Finance</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PERSONAL ===== -->
+<section class="section z-wasabi" id="personal">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Off the Clock</span>
+      <h2 class="sec-title">The stuff that doesn&rsquo;t fit on a resume.</h2>
+    </div>
+    <div class="personal-grid reveal">
+      <div>
+        <p class="philo">&ldquo;Choose to be happy.&rdquo;</p>
+        <p>I&rsquo;m serious when I need to be, but I&rsquo;m smiling most of the time and I like to have fun, even at work. Whimsy and good work aren&rsquo;t opposites. Ask me about it sometime.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><div class="fl">Coach</div><div class="ft"><b>Youth soccer &amp; flag football</b><span>Soccer since 2019, flag football since 2025, coaching my kids&rsquo; teams and anyone else&rsquo;s.</span></div></div>
+        <div class="fact"><div class="fl">Languages</div><div class="ft"><b>Russian speaker</b><span>Two years living in Yekaterinburg, Russia. It still comes in handy.</span></div></div>
+        <div class="fact"><div class="fl">Roots</div><div class="ft"><b>Recovering economist</b><span>Once briefed policymakers on energy and emerging markets. I still love a good model.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OFFICE HOURS (full-bleed band) ===== -->
+<section class="oh" id="office-hours">
+  <div class="wrap oh-grid">
+    <div class="oh-art" aria-hidden="true">
+      <svg viewBox="0 0 220 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <circle cx="110" cy="106" r="92" stroke-width="2" opacity="0.22"/>
+          <path d="M93 80 C84 70 84 62 93 52 C102 42 102 34 93 24" stroke-width="2.5" opacity="0.65"/>
+          <path d="M110 82 C101 72 101 64 110 54 C119 44 119 36 110 26" stroke-width="2.5" opacity="0.85"/>
+          <path d="M127 80 C118 70 118 62 127 52 C136 42 136 34 127 24" stroke-width="2.5" opacity="0.65"/>
+          <path d="M72 94 C72 87 148 87 148 94 C148 101 72 101 72 94 Z"/>
+          <path d="M73 95 L80 156 C81 165 88 171 97 171 L123 171 C132 171 139 165 140 156 L147 95"/>
+          <path d="M148 109 C172 109 176 140 151 145"/>
+          <path d="M58 184 C58 177 162 177 162 184 C162 191 58 191 58 184 Z" opacity="0.9"/>
+          <path d="M171 60 L173.5 66 L180 68.5 L173.5 71 L171 77 L168.5 71 L162 68.5 L168.5 66 Z" stroke-width="2" opacity="0.8"/>
+          <path d="M50 150 L52 155 L57 157 L52 159 L50 164 L48 159 L43 157 L48 155 Z" stroke-width="2" opacity="0.65"/>
+        </g>
+      </svg>
+    </div>
+    <div class="oh-copy">
+      <span class="kicker">Office Hours</span>
+      <h2>My door&rsquo;s open. Pull up a chair.</h2>
+      <p>Bring your challenges, your models, your decisions, or your half-baked ideas, and let&rsquo;s work through them together. No agenda, no pitch. Just a useful hour. I&rsquo;m between roles right now, and I&rsquo;d rather spend the time helping people than refreshing my inbox.</p>
+      <p class="who">Founders &middot; Analysts &amp; operators &middot; Job seekers &middot; Career changers &middot; Hiring managers</p>
+      <div class="oh-actions">
+        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0n71nekwuj3a8plFNA00bc_fX05Iqd8uNwdDUCOyBbbHSD7LRZSNm-Ll5G556lfsLq0SHAdj9M" target="_blank" rel="noopener" class="btn btn-invert">Grab a time <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONNECT ===== -->
+<section class="connect" id="connect">
+  <div class="wrap">
+    <h2 class="reveal">Let&rsquo;s talk.</h2>
+    <p class="reveal">Open to roles in Operations, BI, and Analytics, especially in AI, robotics, climate tech, fintech, and personal finance. Or just say hi.</p>
+    <div class="connect-links reveal">
+      <a href="https://www.linkedin.com/in/htylerkurtz/" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn <span class="arr">&rarr;</span></a>
+      <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0n71nekwuj3a8plFNA00bc_fX05Iqd8uNwdDUCOyBbbHSD7LRZSNm-Ll5G556lfsLq0SHAdj9M" target="_blank" rel="noopener" class="btn btn-ghost">Book office hours</a>
+      <a href="mailto:h.tyler.kurtz@outlook.com" class="btn btn-ghost">Email me</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <span class="fb">H. Tyler Kurtz</span>
+    <span>Analytics &amp; Operations Leader &middot; San Francisco Bay Area</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* Mobile nav */
+  var toggle = document.getElementById('navToggle');
+  var links  = document.getElementById('navLinks');
+  if(toggle){
+    toggle.addEventListener('click', function(){ links.classList.toggle('show'); });
+    links.addEventListener('click', function(e){ if(e.target.tagName === 'A') links.classList.remove('show'); });
+  }
+
+  /* Reveal on scroll */
+  var revObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); revObs.unobserve(en.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(r){ revObs.observe(r); });
+
+  /* Hero photo parallax + fade (mobile circle only) */
+  var heroPhoto = document.getElementById('heroPhoto');
+  var mqMobile = window.matchMedia('(max-width:920px)');
+  var mqReduce = window.matchMedia('(prefers-reduced-motion:reduce)');
+  var phTicking = false;
+  function heroParallax(){
+    phTicking = false;
+    if(!heroPhoto) return;
+    if(!mqMobile.matches || mqReduce.matches){ heroPhoto.style.transform=''; heroPhoto.style.opacity=''; return; }
+    var sy = window.scrollY || window.pageYOffset || 0;
+    var p = Math.min(Math.max(sy / 360, 0), 1);
+    heroPhoto.style.transform = 'translateY(' + (sy * 0.32).toFixed(1) + 'px) scale(' + (1 - p * 0.06).toFixed(3) + ')';
+    heroPhoto.style.opacity = (1 - p).toFixed(3);
+  }
+  function onHeroScroll(){ if(!phTicking){ phTicking = true; requestAnimationFrame(heroParallax); } }
+  if(heroPhoto){
+    heroPhoto.style.willChange = 'transform, opacity';
+    window.addEventListener('scroll', onHeroScroll, {passive:true});
+    window.addEventListener('resize', heroParallax);
+    heroParallax();
+  }
+
+  /* Disclosure rows (experience + projects) */
+  document.querySelectorAll('.entry-trigger').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var entry = btn.closest('.entry');
+      var body  = entry.querySelector('.entry-body');
+      var toggle = entry.querySelector('.entry-toggle');
+      var open = entry.classList.toggle('open');
+      body.style.maxHeight = open ? (body.scrollHeight + 'px') : '0px';
+      if(toggle) toggle.textContent = open ? '–' : '+';
+    });
+  });
+
+  /* Scrollspy */
+  var navMap = {};
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    var href = a.getAttribute('href') || '';
+    if(href.indexOf('#') === 0) navMap[href.slice(1)] = a;
+  });
+  var spyObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        var id = en.target.id;
+        Object.keys(navMap).forEach(function(k){ navMap[k].classList.toggle('active', k === id); });
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px'});
+  ['approach','experience','projects','skills','recs','office-hours'].forEach(function(id){
+    var s = document.getElementById(id); if(s) spyObs.observe(s);
+  });
+})();
+</script>
+</body>
+</html>
