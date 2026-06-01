@@ -134,8 +134,8 @@
   .open-note b{color:var(--color-ink);font-weight:600}
   .open-note .lead{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-secondary);display:block;margin-bottom:8px}
 
-  .hero-photo{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/5;background:var(--color-surface);border:1px solid var(--color-line)}
-  .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero-photo{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:1/1;background:var(--color-surface);border:1px solid var(--color-line)}
+  .hero-photo img{width:100%;height:100%;object-fit:contain;display:block}
   .hero-photo.empty img{display:none}
   .hero-photo:not(.empty){box-shadow:var(--shadow-photo)}
   .hero-photo .photo-hint{display:none}
@@ -149,7 +149,7 @@
   .numbered .row{display:grid;grid-template-columns:auto 1fr;gap:28px;padding:30px 0;border-bottom:1px solid var(--color-line);align-items:baseline}
   .numbered .row .no{font-family:var(--mono);font-size:0.92rem;color:var(--zone, var(--color-primary));padding-top:6px}
   .numbered .row h3{font-family:var(--display);font-weight:500;font-size:1.42rem;letter-spacing:-0.01em;margin-bottom:10px}
-  .numbered .row p{color:var(--color-ink-muted);max-width:60ch}
+  .numbered .row p{color:var(--color-ink-muted)}
 
   /* ---------- Applied AI band ---------- */
   .ai{margin-top:44px;border:1px solid var(--color-line);border-radius:8px;background:var(--color-surface);padding:34px 36px;display:grid;grid-template-columns:0.9fr 1.3fr;gap:34px}
@@ -173,7 +173,7 @@
   .entry.open .entry-toggle{color:var(--color-primary)}
   .entry-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
   .entry-body-inner{padding:0 0 28px 174px}
-  .entry-body ul{list-style:none;display:grid;gap:11px;max-width:64ch}
+  .entry-body ul{list-style:none;display:grid;gap:11px}
   .entry-body li{position:relative;padding-left:20px;color:var(--color-ink-muted)}
   .entry-body li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:1px;background:var(--color-primary)}
   .entry-body li b{color:var(--color-ink);font-weight:600}
@@ -307,7 +307,7 @@
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#recs">Recommendations</a>
-      <a href="#office-hours" class="nav-cta">Office Hours</a>
+      <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0n71nekwuj3a8plFNA00bc_fX05Iqd8uNwdDUCOyBbbHSD7LRZSNm-Ll5G556lfsLq0SHAdj9M" target="_blank" rel="noopener" class="nav-cta">Office Hours</a>
     </nav>
   </div>
 </header>
@@ -321,14 +321,11 @@
         <p class="hero-sub reveal">For 10+ years I&rsquo;ve built the analytics and operational systems that growing companies need, often as the founding analytics or ops hire. I turn ambiguous problems into clear, measurable, and scalable processes.</p>
         <p class="hero-sub reveal" style="margin-top:16px;">I&rsquo;m a free agent, and I&rsquo;m ready to build. I&rsquo;m looking for my next role in Operations or Analytics. Also happy to talk about opportunities, work through real problems with you, or chat about whatever is on your mind. Book time below.</p>
         <div class="hero-actions reveal">
-          <a href="#office-hours" class="btn btn-primary">Book office hours <span class="arr">&rarr;</span></a>
+          <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0n71nekwuj3a8plFNA00bc_fX05Iqd8uNwdDUCOyBbbHSD7LRZSNm-Ll5G556lfsLq0SHAdj9M" target="_blank" rel="noopener" class="btn btn-primary">Book Office Hours <span class="arr">&rarr;</span></a>
         </div>
       </div>
-      <div class="hero-photo empty reveal" id="heroPhoto">
-        <img src="tyler-photo.jpg" alt="H. Tyler Kurtz"
-             onload="document.getElementById('heroPhoto').classList.remove('empty')"
-             onerror="this.remove()">
-        <div class="photo-hint">Tyler&rsquo;s photo goes here<br>save it in this folder as<br><b>tyler-photo.jpg</b></div>
+      <div class="hero-photo reveal" id="heroPhoto">
+        <img src="Tyler Headshot.png" alt="H. Tyler Kurtz">
       </div>
     </div>
   </div>
@@ -369,7 +366,7 @@
 
     <div class="ai reveal">
       <div class="ai-head">
-        <span class="kicker">Applied AI &middot; daily</span>
+        <span class="kicker">Applied AI</span>
         <h3>I don&rsquo;t just talk about AI. I ship with it.</h3>
       </div>
       <ul class="ai-points">
@@ -386,8 +383,8 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="kicker">Experience</span>
-      <h2 class="sec-title">Fifteen years of turning messy into measurable.</h2>
-      <p class="sec-intro">From economic briefings in D.C. to founding analytics in startups. Click any role to go deeper.</p>
+      <h2 class="sec-title" style="white-space:nowrap">Combining Analytics and Operations.</h2>
+      <p class="sec-intro" style="max-width:100%">From economic briefings in D.C. to founding analytics in startups. Click any role to go deeper.</p>
     </div>
 
     <div class="entries reveal">
